@@ -1,0 +1,44 @@
+{"frames": {
+
+"asteroid.png":
+{
+	"frame": {"x":2,"y":2,"w":20,"h":20},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":20},
+	"sourceSize": {"w":20,"h":20}
+},
+"background.png":
+{
+	"frame": {"x":24,"y":2,"w":1024,"h":768},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1024,"h":768},
+	"sourceSize": {"w":1024,"h":768}
+},
+"bullet.png":
+{
+	"frame": {"x":1050,"y":2,"w":12,"h":12},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":4,"w":12,"h":12},
+	"sourceSize": {"w":20,"h":20}
+},
+"player.png":
+{
+	"frame": {"x":1064,"y":2,"w":20,"h":20},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":20},
+	"sourceSize": {"w":20,"h":20}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "GameAtlas.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":1024},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:5b60b8adfbf6457782b1bd56a4a55b00:1/1$"
+}
+}
