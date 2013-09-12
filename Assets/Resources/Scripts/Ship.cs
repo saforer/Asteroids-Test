@@ -38,7 +38,7 @@ public class Ship : FSprite {
 		
 		float shipRotationSpeed = 200;
 		float shipSpeed = 20;
-		float ionicpower = .05f;
+		float ionicpower = .01f;
 		
 		
 		if (Input.GetKey("left"))	{          
@@ -71,13 +71,33 @@ public class Ship : FSprite {
 			this.velocity -= this.velocity * ionicpower;
 		}
 		
+		
+		if (Input.GetKeyDown(KeyCode.A)) {
+			//are you allowed to shoot?
+			if (CanShoot()) {
+				Shoot();	
+			}
+			
+		}
+		
 	}
 		
-		public void ShipPosUpdate() {
+	public void ShipPosUpdate() {
 			
 			
 			
 			this.SetPosition(this.GetPosition() + this.velocity);
+		
+	}
+	
+	public bool CanShoot() {
+	//TODO: ACTUALLY SET UP STUFF HERE
+	return true;	
+	}
+	
+	public void Shoot() {
+		Debug.Log ("Bang");
+		float bulletDirection = GetFacing();
 		
 	}
 }
