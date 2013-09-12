@@ -38,6 +38,7 @@ public class Ship : FSprite {
 		
 		float shipRotationSpeed = 200;
 		float shipSpeed = 20;
+		float ionicpower = .05f;
 		
 		
 		if (Input.GetKey("left"))	{          
@@ -61,6 +62,13 @@ public class Ship : FSprite {
 			
 			this.velocity += this.acceleration;
 			
+		}
+		
+		if (Input.GetKey (KeyCode.DownArrow)) {
+			//<InternetJanitor> Forer_: call it "ionic damping" or something that sounds cool	
+			
+			
+			this.velocity -= this.velocity * ionicpower;
 		}
 		
 	}
