@@ -7,6 +7,8 @@ using System.Collections.Generic;
 public class Ship : FSprite {
 	
 	Vector2 orientation;
+	Vector2 acceleration;
+	Vector2 velocity;
 	
 	public Ship (string elementName) : base(elementName) {
 		
@@ -35,7 +37,7 @@ public class Ship : FSprite {
 	public void HandleInput() {
 		
 		float shipRotationSpeed = 200;
-		float shipSpeed = 200;
+		float shipSpeed = 20;
 		
 		
 		if (Input.GetKey("left"))	{          
@@ -52,7 +54,23 @@ public class Ship : FSprite {
 			CalculateOrientation();
 		}
 		
-
+		if (Input.GetKey (KeyCode.UpArrow)) {
+			
+			this.acceleration = (shipSpeed * orientation * Time.deltaTime);
+			
+			
+			this.velocity += this.acceleration;
+			
+		}
+		
+	}
+		
+		public void ShipPosUpdate() {
+			
+			
+			
+			this.SetPosition(this.GetPosition() + this.velocity);
+		
 	}
 }
 

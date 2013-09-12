@@ -21,7 +21,7 @@ using System.Collections.Generic;
 			AddChild(_background);
 	
 			_ship = new Ship("player");
-				_ship.scale = 5;
+			
 			AddChild (_ship);
 			
 		
@@ -43,6 +43,7 @@ using System.Collections.Generic;
 	
 		void HandleUpdate () {
 			_ship.HandleInput();
+			_ship.ShipPosUpdate();
 		
 		
 			BulletUpdate();
