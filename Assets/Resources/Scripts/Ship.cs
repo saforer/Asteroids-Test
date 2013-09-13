@@ -97,7 +97,15 @@ public class Ship : FSprite {
 	
 	public void Shoot() {
 		Debug.Log ("Bang");
+		int bulletBaseSpeed = 100;
+		
 		float bulletDirection = GetFacing();
+		Vector2 bulletPosition = GetPosition();
+		float bulletSpeed = bulletBaseSpeed;
+		Bullet bullet = new Bullet("bullet", bulletPosition, bulletDirection, bulletSpeed);
+		bullet.owner = this;
+		
+		
 		
 	}
 }
