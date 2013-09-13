@@ -10,6 +10,11 @@ public class Ship : FSprite {
 	Vector2 acceleration;
 	Vector2 velocity;
 	
+	
+
+    private TestTitlePage gamePage = null;
+	
+	
 	public Ship (string elementName) : base(elementName) {
 		
 		
@@ -105,9 +110,29 @@ public class Ship : FSprite {
 		Bullet bullet = new Bullet("bullet", bulletPosition, bulletDirection, bulletSpeed);
 		bullet.owner = this;
 		
+		if (gamePage != null)
+                {
+                    gamePage.AddBullet(bullet);
+                }
 		
 		
 	}
+	
+	
+	 public override void HandleAddedToContainer(FContainer container)
+        {
+            base.HandleAddedToContainer(container);
+
+            if (container is TestTitlePage)
+            {
+                this.gamePage = (TestTitlePage)container;
+            }
+            else
+            {
+                this.gamePage = null;
+            }
+        }
+	
 }
 
 

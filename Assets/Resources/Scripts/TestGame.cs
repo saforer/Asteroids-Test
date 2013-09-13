@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ public class TestGame : MonoBehaviour {
 	public static TestGame instance;
 	
 	private TestPageType _currentPageType = TestPageType.None;
-	private TestPage _currentPage = null;
+	private TestTitlePage _currentPage = null;
 	
 	private FStage _stage;
 	
@@ -48,7 +48,7 @@ public class TestGame : MonoBehaviour {
 	{
 		if(_currentPageType == pageType) return; //we're already on the same page, so don't bother doing anything
 
-		TestPage pageToCreate = null;
+		TestTitlePage pageToCreate = null;
 
 		if (pageType == TestPageType.TitlePage)
 		{

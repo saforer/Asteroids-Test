@@ -72,5 +72,9 @@ using System.Collections.Generic;
 		}
 	
 
+	    internal void AddBullet(Bullet bullet)  {
+            //this.bullets.Add(bullet);
+            this.AddChild(bullet);
+        }
 	
 	}
