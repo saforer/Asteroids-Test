@@ -18,12 +18,16 @@ public class Bullet : FSprite {
 	
 	
     public FNode owner;
-
+	
+	
+	List<FSprite> BulletList = new List<FSprite>();
+	List<FSprite> BulletToRemove = new List<FSprite>();
 	
 	
 	public Bullet (string elementName, Vector2 startPosition, float direction, float speed) : base(elementName) {
 		this.direction = direction;
         this.speed = speed;
+		this.SetPosition(startPosition);
 		
 		CalculateVelocity(direction, speed);
 	}
@@ -33,5 +37,30 @@ public class Bullet : FSprite {
 
             this.velocity = new Vector2(speed * Mathf.Cos(directionRads), speed * Mathf.Sin(directionRads));
 	}
+	
+	public void BulletUpdate() {
+	
+		foreach (FSprite bullet in BulletList) {
+	    	bullet.y+=20;
+							
+		    if (bullet.y >= Futile.screen.halfHeight||bullet.y <= -Futile.screen.halfHeight||bullet.x >= Futile.screen.halfWidth ||bullet.x <= -Futile.screen.halfWidth) {
+		      BulletToRemove.Add(bullet);
+		    }
+		  }	
+									
+		  foreach (FSprite bullet in BulletToRemove) {
+		    BulletList.Remove(bullet);
+		    RemoveChild (bullet);	
+		  }
+
+                   BulletToRemove.Clear();
+		}
+	
+
+	    internal void AddBullet(Bullet bullet)  {
+            //this.bullets.Add(bullet);
+            this.AddChild(bullet);
+        }
+	
 }
 

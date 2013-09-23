@@ -46,35 +46,9 @@ using System.Collections.Generic;
 			_ship.ShipPosUpdate();
 		
 		
-			BulletUpdate();
+			Bullet.BulletUpdate();
 		
 		}
-	
 
-	
-	
-		private void BulletUpdate() {
-	
-		foreach (FSprite bullet in BulletList) {
-	    	bullet.y+=20;
-							
-		    if (bullet.y >= Futile.screen.halfHeight||bullet.y <= -Futile.screen.halfHeight||bullet.x >= Futile.screen.halfWidth ||bullet.x <= -Futile.screen.halfWidth) {
-		      BulletToRemove.Add(bullet);
-		    }
-		  }	
-									
-		  foreach (FSprite bullet in BulletToRemove) {
-		    BulletList.Remove(bullet);
-		    RemoveChild (bullet);	
-		  }
-
-                   BulletToRemove.Clear();
-		}
-	
-
-	    internal void AddBullet(Bullet bullet)  {
-            //this.bullets.Add(bullet);
-            this.AddChild(bullet);
-        }
 	
 	}
